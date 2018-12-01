@@ -1,0 +1,58 @@
+@model DocumentaryEvidence.Models.Document
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Document</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+    </dl>
+</div>
+<p>
+@if (User.Identity.IsAuthenticated == true)
+{
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+    @Html.Label("|", new { style = "width: 10px; padding-left: 10px; padding-right: 10px;" })
+    @Html.ActionLink("Back to List", "Index")
+}
+else
+{
+    @Html.ActionLink("Back to List", "Index")
+}
+</p>
